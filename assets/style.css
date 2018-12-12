@@ -1,0 +1,189 @@
+@charset "utf-8";body.fonts-loaded,body.fonts-loaded button,body.fonts-loaded h1,body.fonts-loaded h2,body.fonts-loaded h3,body.fonts-loaded h4,body.fonts-loaded h5,body.fonts-loaded input,body.fonts-loaded select,body.fonts-loaded table,body.fonts-loaded textarea {
+    font-family: noto,notokr,Helvetica,Microsoft YaHei,Apple SD Gothic Neo,Malgun Gothic,맑은 고딕,Dotum,돋움,sans-serif
+}
+
+@font-face {
+    font-display:auto;font-family: noto;
+    font-style: normal;
+    font-weight: 400;
+    src: local("noto");
+    src: url(ssevent_font.woff) format("woff")
+}
+
+@font-face {
+    font-display:auto;font-family: notokr;
+    font-style: normal;
+    font-weight: 400;
+    src: local("notokr");
+    src: url(ssevent_font.woff2) format("woff2"),url(ssevent_font.woff) format("woff")
+}
+
+@media only screen and (max-width: 767px) {
+    body.fonts-loaded,body.fonts-loaded button,body.fonts-loaded h1,body.fonts-loaded h2,body.fonts-loaded h3,body.fonts-loaded h4,body.fonts-loaded h5,body.fonts-loaded input,body.fonts-loaded select,body.fonts-loaded table,body.fonts-loaded textarea {
+        font-family:Helvetica,Apple SD Gothic Neo,sans-serif
+    }
+}
+html {
+    height: 100%;
+}
+body {
+    display: block;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    margin: 0;
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    background-position-x: center;
+}
+.wrapper {
+    height: 100% !important;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#top {
+    background-color: #2ca9b4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 65px;
+    z-index:555;
+}
+#top .header{
+    clear: both;
+    width: 1116px;
+    margin: 0 auto;
+    zoom: 1;
+}
+.main {
+    float: left;
+    width: 100%;
+    margin: 65px auto;
+}
+.page_container {
+    position: relative;
+    top: 0px;
+    margin: 0 auto 0;
+    max-width: 950px;
+    z-index: 3;
+}
+h2.page_title {
+    color: #ffb453;
+    font-size: 45px;
+    letter-spacing: 0px;
+    font-weight: normal;
+    line-height: 50px;
+}
+h2.page_title span{
+    letter-spacing: 2px;
+    font-weight:bold;
+}
+p.page_context {
+    font-size: 16px;
+    color: #FFF;
+}
+.page_groups {
+    position:relative;
+    clear: both;
+    margin-top: 100px;
+    height: 330px;
+    zoom: 1;
+}
+.page_card {
+    background: #FFF;
+}
+.page_group_left {
+    float:left;
+    width: calc(50% - 5px);
+    min-width: 450px;
+    height: 330px;
+}
+.page_group_right {
+    float:right;
+    width: calc(50% - 5px);
+    min-width: 450px;
+    height: 328px;
+    overflow: hidden;
+}
+.border-line {
+    border: 1px solid #dadada;
+}
+.santa-img {
+    background-image: url(../images/santa_img_01.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.tabs ul.tab_group {
+    float: left;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+
+}
+.tabs ul.tab_group li {
+    margin: 0px;
+    width: 19.79%;
+    height: 50px;
+    float:left;
+    font-size: 14px;
+    text-align: center;
+    border-top: 2px solid #f6f6f6;
+    border-right: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
+    padding: 10px 0px 0px 0px;
+    background-color: #f6f6f6;
+    color: #c5c5c5;
+    font-weight: normal;
+    cursor: pointer;
+}
+.tabs ul.tab_group li.none{
+    border-right: 0px solid;
+}
+.tabs ul.tab_group li.active{
+    border-bottom: 0px solid;
+    border-top: 3px solid #2caab4;
+    color: #2caab4;
+    background-color: #FFF;
+}
+.contents textarea{
+    width: 95%;
+    min-height: 300px;
+    border: 0px solid;
+    padding: 5px;
+    outline: none;
+ }
+.button_group {
+    width:600px;
+    margin: 50px auto;
+    height: 70px;
+}
+.btn {
+    background-color: #8a8a8a;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 2px;
+    font-size: 15px;
+    font-weight: normal;
+    height: 54px;
+    color: #FFF;
+    text-shadow: 0 0 0 rgba(0,0,1,.15);
+    width: 174px;
+    margin: 0px 5px;
+}
+.btn.active {
+    background-color: #3bb8c2;
+}
+.page_message {
+    position: relative;
+    clear: both;
+    margin-top: 30px;
+    min-height: 640px;
+    zoom: 1;
+    background-image: url(../images/card_01.png);
+}
+.message_card {
+    float:left;
+    width: 100%;
+    height: 540px;
+}

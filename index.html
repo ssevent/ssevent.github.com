@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
 <head>
     <meta charset="UTF-8">
     <title>Selvas AI X Christmax</title>
     <link rel="stylesheet" href="assets/onepage-scroll.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/style.css" />
     <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -13,17 +13,65 @@
     <script src="http://ttsevent.selvasai.com.s3.ap-northeast-2.amazonaws.com/assets/js/xvoice-audio-0.1.1.min.js"></script>
     <script src="assets/app.js"></script>
 </head>
-<body>
+<body class="fonts-loaded" style="background: url(images/page_01.png) top no-repeat rgb(255, 255, 255);">
 <div class="wrapper">
+    <div id="top">
+        <div class="header">
+            <img src="images/title_01.png" alt="Selvas AI X Santa Voice" />
+        </div>
+    </div>
     <div id="container" class="main">
         <section id="home" class="page1">
             <div class="page_container">
-                aa
+                <h2 class="page_title"><span>산타!</span> 내 마음을 전해줘</h2>
+                <p class="page_context">올 겨울 산타가 당신의 못다한 이야기를 전해드려요.</p>
+                <p class="page_context">인공지능 전문기업 ‘셀바스AI’가 산타소환 기회를 선물합니다.<br/>원하는 메시지로 산타를 소환하여 고마운 마음을 전하세요.</p>
+
+                <div class="page_groups">
+                    <div class="page_card page_group_left santa-img">
+
+                    </div>
+                    <div class="page_card page_group_right border-line">
+                        <div class="tabs">
+                            <ul class="tab_group">
+                                <li class="active">든든한<br/>친구에게</li>
+                                <li>고마운<br/>부모님에게</li>
+                                <li>사랑하는<br/>연인에게</li>
+                                <li>소중한<br/>내 아이에게</li>
+                                <li class="none">직접<br/>작성하기</li>
+                            </ul>
+                        </div>
+                        <div class="contents">
+                            <textarea>친구야! 크리스마스 하루만 착하게 산다고 산타가 선물을 주는 건 아니야.
+하지만 앞으로도 그렇게 살면 내년에도 선물을 못 받겠지?
+내년엔 꼭 착한 사람이 되서 우리 모두 선물을 받는 사람이 되자!
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button_group">
+                    <button id="btn_listen" class="btn active" title="" type="button">메세지 들어보기</button>
+                    <button id="btn_send" class="btn" title="" type="button">메세지 보내기</button>
+                </div>
             </div>
         </section>
         <section id="share" class="page2">
             <div class="page_container">
-                bb
+                <h2 class="page_title">누군가의 마음이 담긴<br>
+                    <span>메시지가 도착</span>했습니다</h2>
+                <p class="page_context">산타가 직접 메시지를 들려줄꺼니까 꼭 소리를 키워서 들어보세요!</p>
+                <div class="page_message">
+                    <div class="message_card"></div>
+                    <div class="button_group">
+                        <button id="btn2_listen" class="btn active" title="" type="button">메세지 들어보기</button>
+                        <button id="btn2_send" class="btn" title="" type="button">메세지 보내기</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="faq" class="page3">
+            <div class="page_container">
             </div>
         </section>
     </div>
