@@ -32,22 +32,26 @@
 
                     </div>
                     <div class="page_card page_group_right border-line">
-                        <div class="tabs">
-                            <ul class="tab_group">
-                                <li class="active">든든한<br/>친구에게</li>
-                                <li>소중한<br/>내 아이에게</li>
-                                <li>고마운<br/>부모님에게</li>
-                                <li>사랑하는<br/>연인에게</li>
-                                <li class="none">직접<br/>작성하기</li>
-                            </ul>
-                        </div>
-                        <div class="contents">
-                            <textarea id="tts_txt" class="txt">친구야! 크리스마스 하루만 착하게 산다고 산타가 선물을 주는 건 아니야.
-하지만 앞으로도 그렇게 살면 내년에도 선물을 못 받겠지?
-내년엔 꼭 착한 사람이 되서 우리 모두 선물을 받는 사람이 되자!
-                            </textarea>
-                            <p class="text_count">0 / 200 자</p>
-                        </div>
+                        <form id="message">
+                            <input type="hidden" name="language" value="0" />
+                            <input type="hidden" name="speaker" value="0" />
+                            <div class="tabs">
+                                <ul class="tab_group">
+                                    <li class="active">든든한<br/>친구에게</li>
+                                    <li>소중한<br/>내 아이에게</li>
+                                    <li>고마운<br/>부모님에게</li>
+                                    <li>사랑하는<br/>연인에게</li>
+                                    <li class="none">직접<br/>작성하기</li>
+                                </ul>
+                            </div>
+                            <div class="contents">
+                                <textarea id="tts_txt" name="text" class="txt">친구야! 크리스마스 하루만 착하게 산다고 산타가 선물을 주는 건 아니야.
+    하지만 앞으로도 그렇게 살면 내년에도 선물을 못 받겠지?
+    내년엔 꼭 착한 사람이 되서 우리 모두 선물을 받는 사람이 되자!
+                                </textarea>
+                                <p class="text_count">0 / 200 자</p>
+                            </div>
+                        </form>
                     </div>
                 </div>
 
