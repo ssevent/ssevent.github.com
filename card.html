@@ -2,6 +2,7 @@
 <html lang="kr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,user-scalable=no">
     <title>Selvas AI와 함께하는 인공지능 산타소환 이벤트</title>
     <link rel="stylesheet" href="assets/onepage-scroll.css" />
     <link rel="stylesheet" href="assets/style.css" />
@@ -25,38 +26,39 @@
             <div class="page_container">
                 <h2 class="page_title">누군가의 마음이 담긴<br>
                     <span>메시지가 도착</span>했습니다</h2>
-                <p class="page_context">산타가 직접 메시지를 들려줄꺼니까 꼭 소리를 키워서 들어보세요!</p>
+                <p class="page_context">산타가 직접 메시지를 들려줄꺼니까<br/>꼭 소리를 키워서 들어보세요!</p>
                 <div class="page_message">
                     <div class="message_card"></div>
                     <div class="button_group">
                         <button id="btn2_listen" class="btn active" title="" type="button">메세지 들어보기</button>
-                        <button id="btn2_send" class="btn" title="" type="button">메세지 보내기</button>
+                        <a href="index.html"><button id="btn2_send" class="btn" title="" type="button">메세지 보내기</button></a>
                     </div>
                 </div>
             </div>
         </section>
         <section id="faq" class="page2">
             <div class="page_container">
-                <h2 class="page_title">크리스마스와 AI의 콜라보!<br>
+                <h2 class="page_title">산타클로스와 AI의 콜라보!<br>
                     <span>인공지능 산타소환</span>이벤트</h2>
-                <p class="page_context">산타 이벤트, 어떠셨나요?  짤막한 코멘트라도 너무 소중하답니다.</p>
-
-                <div class="page_card border-line">
-                    <div class="contents">
-                            <textarea placeholder="이벤트 후기를 남겨주세요!"></textarea>
-                        <p class="text_count">0 / 200 자</p>
+                <p class="page_context">산타 이벤트, 어떠셨나요?<br/>짤막한 코멘트라도 너무 소중하답니다.</p>
+                <div class="page-post">
+                    <div class="page_card border-line">
+                        <div class="comment">
+                            <textarea id="tts_comment" placeholder="참여 후기 또는 의견을 남겨주세요!"></textarea>
+                            <p id="tts_comment_count" class="text_count">0 / 200 자</p>
+                        </div>
+                    </div>
+                    <div class="button_group">
+                        <button id="btn_feedback" class="btn active" title="" type="button">의견 남기기</button>
                     </div>
                 </div>
-                <div class="button_group">
-                    <button id="btn_feedback" class="btn active" title="" type="button">의견 남기기</button>
-                </div>
-            </div>
-            <div class="footer">
-                <img src="images/logo.png" class="footer_logo"/>
-                <div class="footer_text">
-                    <p class="copyright">서울특별시 금천구 가산디지털1로 19, 19~20층(가산동,대륭테크노타운 18차)
-                        사업제휴문의 +82 2 6190 7500
-                        © 2017 SELVAS AI Corp.</p>
+                <div class="footer">
+                    <img src="images/logo.png" class="footer_logo"/>
+                    <div class="footer_text">
+                        <p class="copyright">서울특별시 금천구 가산디지털1로 19, 19~20층(가산동,대륭테크노타운 18차)
+                            <br/>사업제휴문의 +82 2 6190 7500
+                            <br/>© 2017 SELVAS AI Corp.</p>
+                    </div>
                 </div>
             </div>
         </section>

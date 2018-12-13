@@ -2,6 +2,7 @@
 <html lang="kr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,user-scalable=no">
     <title>Selvas AI와 함께하는 인공지능 산타소환 이벤트</title>
     <link rel="stylesheet" href="assets/onepage-scroll.css" />
     <link rel="stylesheet" href="assets/style.css" />
@@ -10,7 +11,7 @@
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
     <script src="assets/jquery.onepage-scroll.js"></script>
-    <script src="http://ttsevent.selvasai.com.s3.ap-northeast-2.amazonaws.com/assets/js/xvoice-audio-0.1.1.min.js"></script>
+    <script src="https://postcard.selvy.ai/assets/js/xvoice-audio-0.1.1.min.js"></script>
     <script src="assets/app.js"></script>
 </head>
 <body class="fonts-loaded" style="background: url(images/page_01.png) top no-repeat rgb(255, 255, 255);">
@@ -49,7 +50,7 @@
     하지만 앞으로도 그렇게 살면 내년에도 선물을 못 받겠지?
     내년엔 꼭 착한 사람이 되서 우리 모두 선물을 받는 사람이 되자!
                                 </textarea>
-                                <p class="text_count">0 / 200 자</p>
+                                <p id="tts_txt_count" class="text_count">0 / 200 자</p>
                             </div>
                         </form>
                     </div>
@@ -105,26 +106,25 @@
             <div class="page_container">
                 <h2 class="page_title">산타클로스와 AI의 콜라보!<br>
                     <span>인공지능 산타소환</span>이벤트</h2>
-                <p class="page_context">산타 이벤트, 어떠셨나요?  짤막한 코멘트라도 너무 소중하답니다.</p>
-
-                <div class="page_card border-line">
-                    <div class="comment">
-                        <textarea placeholder="참여 후기 또는 의견을 남겨주세요!"></textarea>
-                        <p class="text_count">0 / 200 자</p>
+                <p class="page_context">산타 이벤트, 어떠셨나요?<br/>짤막한 코멘트라도 너무 소중하답니다.</p>
+                <div class="page-post">
+                    <div class="page_card border-line">
+                        <div class="comment">
+                            <textarea id="tts_comment" placeholder="참여 후기 또는 의견을 남겨주세요!"></textarea>
+                            <p id="tts_comment_count" class="text_count">0 / 200 자</p>
+                        </div>
+                    </div>
+                    <div class="button_group">
+                        <button id="btn_feedback" class="btn active" title="" type="button">의견 남기기</button>
                     </div>
                 </div>
-                <div class="button_group">
-                    <button id="btn_feedback" class="btn active" title="" type="button">의견 남기기</button>
-                </div>
-                <h4 class="sub_title">서비스 안내</h4>
-                <p class="sub_context">본 이벤트는 인공지는 전문기업 셀바스AI에서 개발한 음성 합성 및 인공지능 기술(DNN)을 활용한 이벤트입니다.</p>
-            </div>
-            <div class="footer">
-                <img src="images/logo.png" class="footer_logo"/>
-                <div class="footer_text">
-                    <p class="copyright">서울특별시 금천구 가산디지털1로 19, 19~20층(가산동,대륭테크노타운 18차)
-                        <br/>사업제휴문의 +82 2 6190 7500
-                        <br/>© 2017 SELVAS AI Corp.</p>
+                <div class="footer">
+                    <img src="images/logo.png" class="footer_logo"/>
+                    <div class="footer_text">
+                        <p class="copyright">서울특별시 금천구 가산디지털1로 19, 19~20층(가산동,대륭테크노타운 18차)
+                            <br/>사업제휴문의 +82 2 6190 7500
+                            <br/>© 2017 SELVAS AI Corp.</p>
+                    </div>
                 </div>
             </div>
         </section>

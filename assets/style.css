@@ -52,7 +52,6 @@ body {
 }
 #top .header{
     clear: both;
-    width: 1116px;
     margin: 0 auto;
     zoom: 1;
 }
@@ -60,8 +59,9 @@ body {
     position: relative;
     max-width: 950px;
     z-index: 3;
-    margin: 100px auto 0;
+    margin: 10px auto 0;
     clear: both;
+    padding: 0px 15px;
 }
 .main {
     float: left;
@@ -91,6 +91,23 @@ p.page_context {
     font-size: 16px;
     color: #FFF;
 }
+@media (max-width:700px){
+    body {
+        background-size: 1600px !important;
+        background-position: 25% 0% !important;
+    }
+    h2.page_title {
+        font-size: 28px;
+        letter-spacing: 0px;
+        line-height: 30px;
+    }
+    p.page_context {
+        font-size: 12px;
+        color: #FFF;
+    }
+}
+
+
 .page_groups {
     position:relative;
     clear: both;
@@ -104,13 +121,13 @@ p.page_context {
 .page_group_left {
     float:left;
     width: calc(50% - 5px);
-    min-width: 450px;
+    min-width: 360px;
     height: 330px;
 }
 .page_group_right {
     float:right;
     width: calc(50% - 5px);
-    min-width: 450px;
+    min-width: 360px;
     height: 328px;
 }
 .border-line {
@@ -121,6 +138,7 @@ p.page_context {
     background-size: contain;
     background-repeat: no-repeat;
 }
+
 .tabs ul.tab_group {
     float: left;
     width: 100%;
@@ -131,7 +149,7 @@ p.page_context {
 }
 .tabs ul.tab_group li {
     margin: 0px;
-    width: 19.79%;
+    width: 19.69%;
     height: 50px;
     float:left;
     font-size: 14px;
@@ -169,10 +187,29 @@ p.page_context {
     outline: none;
 }
 .button_group {
-    width:600px;
-    margin: 50px auto;
+    float: left;
+    margin: 20px auto;
     height: 70px;
+    width: 100%;
 }
+@media (max-width:700px){
+    .page_groups {
+        margin-top: 20px;
+    }
+    .page_group_left {
+        display:none;
+    }
+    .page_group_right {
+        float: none;
+        width: 91%;
+        margin: 0px
+    }
+    .tabs ul.tab_group li{
+        font-size: 13px;
+    }
+}
+
+
 .btn {
     background-color: #8a8a8a;
     border: 1px solid rgba(0,0,0,.1);
@@ -195,6 +232,7 @@ p.page_context {
     min-height: 640px;
     zoom: 1;
     background-image: url(../images/card_01.png);
+    background-repeat: no-repeat;
 }
 .message_card {
     float:left;
@@ -242,4 +280,38 @@ p.sub_context {
     margin-top: 70px;
     height: 330px;
     zoom: 1;
+}
+.page-post {
+    margin: 70px 10px 0px 10px;
+    height: 355px;
+}
+@media (max-width:700px){
+    .message_card {
+        float: left;
+        width: 100%;
+        height: 230px;
+    }
+    .page_faq {
+        margin-top: 0px;
+        height: 440px;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    p.sub_context {
+        margin: 3px 2px;
+        color: #000;
+        float:left;
+        text-align: left;
+        font-size: 13px;
+    }
+    .page_message {
+        background-size: 100%;
+    }
+    .btn {
+        font-size: 15px;
+        height: 44px;
+        color: #FFF;
+        text-shadow: 0 0 0 rgba(0,0,1,.15);
+        width: 144px;
+    }
 }

@@ -1,5 +1,6 @@
 
-var _url = "http://dnn-tts-lb-380170603.ap-northeast-2.elb.amazonaws.com";
+var _url = "https://deeptts.selvy.ai";
+
 var text_template = [
     '친구야! 크리스마스 하루만 착하게 산다고 산타가 선물을 주는 건 아니야.\n' +
     '하지만 앞으로도 그렇게 살면 내년에도 선물을 못 받겠지?\n' +
@@ -20,7 +21,24 @@ var loading = {
     }
 }
 
+
 $(document).ready(function(){
+    //
+    window.URLSearchParams = window.URLSearchParams || function (searchString) {
+        var self = this;
+        self.searchString = searchString;
+        self.get = function (name) {
+            var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(self.searchString);
+            if (results == null) {
+                return null;
+            }
+            else {
+                return decodeURI(results[1]) || 0;
+            }
+        };
+    };
+
+    //
     $(".main").onepage_scroll({
         sectionContainer: "section",
         easing: "ease",
@@ -36,19 +54,62 @@ $(document).ready(function(){
 
     //
     var va = VoiceAudio.Create(_url);
+    var va_status = false;
+    //Events
+    va.played = function(){
+        va_status = true;
+    }
+    va.stoped = function(){
+        va_status = false;
+    }
+    va.ended = function(){
+        va_status = false;
+    }
+    va.onerror = function(err){
+        alert(err);
+    }
+
+
     var tts_txt = '';
     $("#btn_listen").on("click", function(){
         tts_txt = $("#tts_txt").val();
-        va.play(tts_txt);
+        if(!va_status) va.play(tts_txt);
+        else va.stop();
     });
+
+    //
     $("#btn_send").on("click", function(){
+        var txt = {"language":0,"speaker":0,"text": $("#tts_txt").val()};
         $.ajax({
             url: _url + "/speech/buffer/mp3",
             type: 'POST',
+            contentType: "application/json",
             beforeSend: function(xhr) {
                 loading.load();
             },
-            data: $("#message").serialize(),
+            data: JSON.stringify(txt),
+            success: function(res){
+                console.log(res);
+                alert(res.code);
+            },
+            error: function(res){
+                console.log(res);
+            },
+            complete: loading.end()
+        });
+    });
+
+    //
+    $("#btn_feedback").on("click", function(){
+        var txt = {"rating": "5", "comment": $("#tts_comment").val()};
+        $.ajax({
+            url: _url + "/data/feedback",
+            type: 'POST',
+            contentType: "application/json",
+            beforeSend: function(xhr) {
+                loading.load();
+            },
+            data: JSON.stringify(txt),
             success: function(res){
                 console.log(res);
             },
@@ -58,4 +119,51 @@ $(document).ready(function(){
             complete: loading.end()
         });
     });
+
+    //
+    $('#tts_txt').keyup(function (e){
+        var content = $(this).val();
+        if(content.length > 200){
+            $(this).val($(this).val().substring(0, 190));
+            return false;
+        } else {
+            $('#tts_txt_count').html(content.length + ' / 200 자');
+        }
+    });
+    $('#tts_txt').keyup();
+
+    //
+    $('#tts_comment').keyup(function (e){
+        var content = $(this).val();
+        if(content.length > 200){
+            $(this).val($(this).val().substring(0, 190));
+            return false;
+        } else {
+            $('#tts_comment_count').html(content.length + ' / 200 자');
+        }
+    });
+    $('#tts_comment').keyup();
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const code = urlParams.get('code');
+    if(code) {
+        console.log(code);
+        var mp3 = "https://s3.ap-northeast-2.amazonaws.com/selvydeeptts/santa/" + code + ".mp3";
+        var audio = document.createElement("audio");
+        audio.preload = "auto";
+
+        audio.controls = false;
+        audio.autoplay = false;
+        audio.src = mp3;
+        audio.oncanplay = function () {
+            console.log("Can Play!");
+        };
+        audio.onerror = function (e) {
+            alert("ERROR");
+        };
+        $("#btn2_listen").on("click", function(){
+            if(audio.paused) audio.play();
+            else audio.pause();
+        });
+    }
 });
