@@ -23,6 +23,23 @@
         font-family:Helvetica,Apple SD Gothic Neo,sans-serif
     }
 }
+
+.loader {
+    display:none;
+    border: 5px solid #bae5ff; /* Light grey */
+    border-top: 5px solid #FFF; /* Blue */
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    margin: 0 auto;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 html {
     height: 100%;
 }
@@ -75,6 +92,9 @@ body {
     max-width: 950px;
     min-height: 640px;
     z-index: 3;
+}
+section.page1 {
+    overflow:hidden;
 }
 h2.page_title {
     color: #ffb453;
@@ -173,10 +193,10 @@ p.page_context {
     background-color: #FFF;
 }
 .contents textarea{
-    width: calc(100% - 10px);
-    min-height: 225px;
+    width: calc(100% - 20px);
+    min-height: 221px;
     border: 0px solid;
-    padding: 5px;
+    padding: 9px;
     outline: none;
  }
 .comment textarea{
@@ -202,10 +222,11 @@ p.page_context {
     .page_group_right {
         float: none;
         width: 91%;
-        margin: 0px
+        margin: 0px auto;
+        min-width: 310px;
     }
     .tabs ul.tab_group li{
-        font-size: 13px;
+        font-size: 12px;
     }
 }
 
@@ -221,6 +242,7 @@ p.page_context {
     text-shadow: 0 0 0 rgba(0,0,1,.15);
     width: 174px;
     margin: 0px 5px;
+    vertical-align: top;
 }
 .btn.active {
     background-color: #3bb8c2;
@@ -285,14 +307,22 @@ p.sub_context {
     margin: 70px 10px 0px 10px;
     height: 355px;
 }
+.detail_view {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
 @media (max-width:700px){
+    h4.sub_title {
+        font-size: 20px;
+    }
     .message_card {
         float: left;
         width: 100%;
         height: 230px;
     }
     .page_faq {
-        margin-top: 0px;
+        margin-top: 35px;
         height: 440px;
         overflow-x: auto;
         overflow-y: hidden;
@@ -302,7 +332,7 @@ p.sub_context {
         color: #000;
         float:left;
         text-align: left;
-        font-size: 13px;
+        font-size: 12px;
     }
     .page_message {
         background-size: 100%;
@@ -314,4 +344,43 @@ p.sub_context {
         text-shadow: 0 0 0 rgba(0,0,1,.15);
         width: 144px;
     }
+}
+
+/* Modal */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

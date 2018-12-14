@@ -13,16 +13,21 @@ var text_template = [
 ];
 
 var loading = {
-    load: function(){
-
+    load: function(_this){
+		$(_this).find('span').hide();
+		$(_this).find('.loader').show();
     },
-    end: function(){
-
+    end: function(_this){
+		$(_this).find('span').show();
+		$(_this).find('.loader').hide();
     }
 }
 
 
 $(document).ready(function(){
+	//
+	Kakao.init("a522881bad66036a1c1c21306321d691");
+	// https://postcard.selvy.ai/santa/?code= ?
     //
     window.URLSearchParams = window.URLSearchParams || function (searchString) {
         var self = this;
@@ -46,34 +51,49 @@ $(document).ready(function(){
         pagination: true,
         updateURL: false,
         beforeMove: function(index) {},
-        loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
+        loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
         keyboard: true,                  // You can activate the keyboard controls
         responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
         direction: "vertical"
     });
 
+    if($("#intro")){
+		$(".main").moveTo(2);
+	}
+
     //
     var va = VoiceAudio.Create(_url);
     var va_status = false;
     //Events
+	va.loaded = function(){
+		loading.load('#btn_listen');
+		va_status = true;
+	}
     va.played = function(){
         va_status = true;
     }
     va.stoped = function(){
+		loading.end('#btn_listen');
         va_status = false;
     }
     va.ended = function(){
+		loading.end('#btn_listen');
         va_status = false;
     }
     va.onerror = function(err){
+		loading.end('#btn_listen');
         alert(err);
     }
 
 
     var tts_txt = '';
     $("#btn_listen").on("click", function(){
+        if(!va) va = VoiceAudio.Create(_url);
         tts_txt = $("#tts_txt").val();
-        if(!va_status) va.play(tts_txt);
+        if(!va_status) {
+			va.play(tts_txt);
+			loading.load('#btn_listen');
+		}
         else va.stop();
     });
 
@@ -85,7 +105,7 @@ $(document).ready(function(){
             type: 'POST',
             contentType: "application/json",
             beforeSend: function(xhr) {
-                loading.load();
+                loading.load(this);
             },
             data: JSON.stringify(txt),
             success: function(res){
@@ -95,7 +115,7 @@ $(document).ready(function(){
             error: function(res){
                 console.log(res);
             },
-            complete: loading.end()
+            complete: loading.end(this)
         });
     });
 
@@ -111,7 +131,7 @@ $(document).ready(function(){
             },
             data: JSON.stringify(txt),
             success: function(res){
-                console.log(res);
+				$("#tts_txt").val();
             },
             error: function(res){
                 console.log(res);
