@@ -354,7 +354,7 @@ p.sub_context {
 .modal_sns {
     margin: -10px auto 0;
     width: 200px;
-    min-height: 90px;
+    min-height: 60px;
 }
 .modal_sns ul li {
     float: left;
@@ -418,4 +418,14 @@ p.sub_context {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+@media (max-width:700px){
+    .modal-content {
+        width: 245px;
+        margin: 60% auto;
+    }
+    .message-contents {
+        margin: 35px 0px;
+    }
 }
