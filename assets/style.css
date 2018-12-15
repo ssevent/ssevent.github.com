@@ -53,6 +53,11 @@ body {
     -webkit-font-smoothing: antialiased;
     background-position-x: center;
 }
+ul {
+     margin: 0;
+     padding: 0;
+     list-style: none;
+ }
 .wrapper {
     height: 100% !important;
     margin: 0 auto;
@@ -65,7 +70,7 @@ body {
     left: 0;
     right: 0;
     height: 65px;
-    z-index:555;
+    z-index:1;
 }
 #top .header{
     clear: both;
@@ -197,6 +202,7 @@ p.page_context {
     min-height: 221px;
     border: 0px solid;
     padding: 9px;
+    font-size: 18px;
     outline: none;
  }
 .comment textarea{
@@ -345,6 +351,35 @@ p.sub_context {
         width: 144px;
     }
 }
+.modal_sns {
+    margin: -10px auto 0;
+    width: 200px;
+    min-height: 90px;
+}
+.modal_sns ul li {
+    float: left;
+    width: 19.99%;
+    text-align: center;
+    margin: 0 5px;
+}
+.modal_sns ul li a {
+    display: block;
+    color: transparent;
+    font-size: 0;
+}
+.modal_sns ul li span {
+     display: inline-block;
+     width: 40px;
+     height: 40px;
+     margin: 0 7px 10px;
+     background: url(../images/share.png) no-repeat;
+     background-size: 200px 40px;
+ }
+.modal_sns ul li span.kakao { background-position: 0 0; }
+.modal_sns ul li span.facebook { background-position: -110px 0; }
+.modal_sns ul li span.twitter { background-position: -55px 0; }
+.modal_sns ul li span.line { background-position: -160px 0; }
+
 
 /* Modal */
 /* The Modal (background) */
@@ -367,7 +402,7 @@ p.sub_context {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 400px; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */

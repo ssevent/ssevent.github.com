@@ -17,12 +17,57 @@ var loading = {
 		$(_this).find('span').hide();
 		$(_this).find('.loader').show();
     },
+    play: function(_this){
+        $(_this).find('span').text('음성 재생중');
+        $(_this).find('span').show();
+        $(_this).find('.loader').hide();
+    },
     end: function(_this){
+        $(_this).find('span').text('음성 들어보기');
 		$(_this).find('span').show();
 		$(_this).find('.loader').hide();
     }
 }
 
+var code = '';
+
+var alertBox = {
+    open : function(text){
+        $("#messageModal").find("message-contents").text(text);
+        $("#messageModal").show();
+    },
+    close : function(){
+        $("#messageModal").hide();
+    },
+    closeShare : function(){
+        $("#shareModal").hide();
+    },
+    openShare : function(){
+        $("#shareModal").show();
+    },
+    share : function(sns){
+        var code = $("#code").val();
+        if(!code || code == "") alert('잘못된 접근입니다.');
+        else {
+            var url = '';
+            switch(sns){
+                case 0:
+                    url = 'https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fpostcard.selvy.ai%2Fsanta%2F%3Fcode%3D' + code;
+                    break;
+                case 1:
+                    url = 'http://twitter.com/share?url=https%3A%2F%2Fpostcard.selvy.ai%2Fsanta%2F%3Fcode%3D' + code + '&text=[셀바스AI]';
+                    break;
+                case 2:
+                    url = 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpostcard.selvy.ai%2Fsanta%2F%3Fcode%3D' + code + '&amp;src=sdkpreparse';
+                    break;
+                case 3:
+                    url = 'https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fpostcard.selvy.ai%2Fsanta%2F%3Fcode%3D' + code;
+                    break;
+            }
+            window.open(url, 'blank');
+        }
+    }
+}
 
 $(document).ready(function(){
 	//
@@ -70,6 +115,7 @@ $(document).ready(function(){
 		va_status = true;
 	}
     va.played = function(){
+        loading.play('#btn_listen');
         va_status = true;
     }
     va.stoped = function(){
@@ -109,10 +155,11 @@ $(document).ready(function(){
             },
             data: JSON.stringify(txt),
             success: function(res){
-                console.log(res);
-                alert(res.code);
+                $("#code").val(res.code);
+                alertBox.openShare();
             },
             error: function(res){
+                alertBox.open("전송 중 에러가 발생했습니다.");
                 console.log(res);
             },
             complete: loading.end(this)
@@ -132,8 +179,10 @@ $(document).ready(function(){
             data: JSON.stringify(txt),
             success: function(res){
 				$("#tts_txt").val();
+                alertBox.open("이벤트에 참여해주셔서 감사합니다!");
             },
             error: function(res){
+                alertBox.open("전송 중 에러가 발생했습니다.");
                 console.log(res);
             },
             complete: loading.end()
@@ -166,24 +215,27 @@ $(document).ready(function(){
 
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
-    if(code) {
-        console.log(code);
-        var mp3 = "https://s3.ap-northeast-2.amazonaws.com/selvydeeptts/santa/" + code + ".mp3";
-        var audio = document.createElement("audio");
-        audio.preload = "auto";
 
-        audio.controls = false;
-        audio.autoplay = false;
-        audio.src = mp3;
-        audio.oncanplay = function () {
-            console.log("Can Play!");
-        };
-        audio.onerror = function (e) {
-            alert("ERROR");
-        };
-        $("#btn2_listen").on("click", function(){
+    $("#btn2_listen").on("click", function(){
+        if(code) {
+            console.log(code);
+            var mp3 = "https://s3.ap-northeast-2.amazonaws.com/selvydeeptts/santa/" + code + ".mp3";
+            var audio = document.createElement("audio");
+            audio.preload = "auto";
+
+            audio.controls = false;
+            audio.autoplay = false;
+            audio.src = mp3;
+            audio.oncanplay = function () {
+                console.log("Can Play!");
+            };
+            audio.onerror = function (e) {
+                alertBox.open("재생 도중 에러가 발생하였습니다.");
+            };
             if(audio.paused) audio.play();
             else audio.pause();
-        });
-    }
+        } else {
+            alertBox.open('잘못된 음성 카드 정보입니다.');
+        }
+    });
 });
