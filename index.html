@@ -6,6 +6,7 @@
     <title>Selvas AI와 함께하는 인공지능 산타소환 이벤트</title>
     <link rel="stylesheet" href="assets/onepage-scroll.css" />
     <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" />
     <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -99,7 +100,7 @@
 
                 <div class="button_group">
                     <button id="btn_listen" class="btn active" title="" type="button"><span>음성 들어보기</span><div class="loader"></div></button>
-                    <button id="btn_send" class="btn" title="" type="button">음성카드 보내기</button>
+                    <button id="btn_send" class="btn active" title="" type="button">음성카드 보내기</button>
                 </div>
             </div>
         </section>
@@ -113,7 +114,28 @@
                         <div class="comment">
                             <textarea id="tts_comment" placeholder="참여 후기 또는 의견을 남겨주세요!"></textarea>
                             <p id="tts_comment_count" class="text_count">0 / 200 자</p>
+                            <input type="hidden" id="star" name="star" value="0" />
                         </div>
+                    </div>
+
+                    <div class='rating-stars text-center'>
+                        <ul id='stars'>
+                            <li class='star' title='Poor' data-value='1'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='Fair' data-value='2'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='Good' data-value='3'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='Excellent' data-value='4'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='WOW!!!' data-value='5'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                        </ul>
                     </div>
                     <div class="button_group">
                         <button id="btn_feedback" class="btn active" title="" type="button">의견 남기기</button>

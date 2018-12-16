@@ -241,7 +241,7 @@ p.page_context {
     background-color: #8a8a8a;
     border: 1px solid rgba(0,0,0,.1);
     border-radius: 2px;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: normal;
     height: 54px;
     color: #FFF;
@@ -428,4 +428,39 @@ p.sub_context {
     .message-contents {
         margin: 35px 0px;
     }
+}
+
+/*
+    Rating
+ */
+.rating-stars {
+    margin-top: 20px;
+}
+.rating-stars ul {
+    list-style-type:none;
+    padding:0;
+    float:left;
+
+    -moz-user-select:none;
+    -webkit-user-select:none;
+}
+.rating-stars ul > li.star {
+    display:inline-block;
+
+}
+
+/* Idle State of the stars */
+.rating-stars ul > li.star > i.fa {
+    font-size:2.3em; /* Change the size of the stars */
+    color:#ccc; /* Color on idle state */
+}
+
+/* Hover state of the stars */
+.rating-stars ul > li.star.hover > i.fa {
+    color:#FFCC36;
+}
+
+/* Selected state of the stars */
+.rating-stars ul > li.star.selected > i.fa {
+    color:#FF912C;
 }

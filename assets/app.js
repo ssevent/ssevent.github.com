@@ -52,7 +52,7 @@ var alertBox = {
             var url = '';
             switch(sns){
                 case 0:
-                    url = 'https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fpostcard.selvy.ai%2Fsanta%2F%3Fcode%3D' + code;
+                    sendLink(code);
                     break;
                 case 1:
                     url = 'http://twitter.com/share?url=https%3A%2F%2Fpostcard.selvy.ai%2Fsanta%2F%3Fcode%3D' + code + '&text=[셀바스AI]';
@@ -69,11 +69,35 @@ var alertBox = {
     }
 }
 
+function sendLink(code) {
+    Kakao.Link.sendDefault({
+        objectType: 'feed',
+        content: {
+            title: '음성 카드가 도착하였습니다.',
+            description: '#크리스마스 카드 #음성지원 #음성카드 #셀바스AI #인공지능',
+            imageUrl: 'https://github.com/ssevent/ssevent.github.com/blob/master/images/santa_img_01.png?raw=true',
+            link: {
+                mobileWebUrl: 'https://voicecard.selvy.ai/santa/?code=' + code,
+                webUrl: 'https://voicecard.selvy.ai/santa/?code=' + code
+            }
+        },
+        buttons: [
+            {
+                title: '음성카드 듣기',
+                link: {
+                    mobileWebUrl: 'https://voicecard.selvy.ai/santa/?code=' + code,
+                    webUrl: 'https://voicecard.selvy.ai/santa/?code=' + code
+                }
+            }
+        ]
+    });
+}
+
 $(document).ready(function(){
 	//
-	Kakao.init("a522881bad66036a1c1c21306321d691");
 	// https://postcard.selvy.ai/santa/?code= ?
     //
+    Kakao.init("a522881bad66036a1c1c21306321d691");
     window.URLSearchParams = window.URLSearchParams || function (searchString) {
         var self = this;
         self.searchString = searchString;
@@ -168,7 +192,7 @@ $(document).ready(function(){
 
     //
     $("#btn_feedback").on("click", function(){
-        var txt = {"rating": "5", "comment": $("#tts_comment").val()};
+        var txt = {"rating": "5", "comment": $("#tts_comment").val(), "star": $("#star").val()};
         $.ajax({
             url: _url + "/data/feedback",
             type: 'POST',
@@ -237,5 +261,22 @@ $(document).ready(function(){
         } else {
             alertBox.open('잘못된 음성 카드 정보입니다.');
         }
+    });
+
+    $('#stars li').on('click', function(){
+        var onStar = parseInt($(this).data('value'), 10); // The star currently selected
+        var stars = $(this).parent().children('li.star');
+
+        for (i = 0; i < stars.length; i++) {
+            $(stars[i]).removeClass('selected');
+        }
+
+        for (i = 0; i < onStar; i++) {
+            $(stars[i]).addClass('selected');
+        }
+
+        // JUST RESPONSE (Not needed)
+        var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
+        $("#star").val(ratingValue);
     });
 });
