@@ -186,7 +186,9 @@ $(document).ready(function(){
                 alertBox.open("전송 중 에러가 발생했습니다.");
                 console.log(res);
             },
-            complete: loading.end('#btn_send')
+            complete: function(){
+            	loading.end('#btn_send')
+			}
         });
     });
 
