@@ -56,6 +56,7 @@ body {
     height: 100%;
     -webkit-font-smoothing: antialiased;
     background-position-x: center;
+    background: url(../images/page_01.png) top no-repeat rgb(255, 255, 255);
 }
 ul {
      margin: 0;
@@ -107,7 +108,7 @@ ul {
     top: 0px;
     margin: 0 auto 0;
     max-width: 950px;
-    min-height: 640px;
+    min-height: 790px;
     overflow:hidden;
     z-index: 3;
 }
@@ -134,6 +135,10 @@ p.page_context {
         background-size: 1600px !important;
         background-position: 25% 0% !important;
     }
+    body.card {
+        background-size: 100% !important;
+        background: url(../images/m_page.png) top no-repeat rgb(255, 255, 255);
+    }
     h2.page_title {
         font-size: 26px;
         letter-spacing: 0px;
@@ -150,7 +155,6 @@ p.page_context {
     position:relative;
     clear: both;
     margin-top: 100px;
-    height: 330px;
     zoom: 1;
 }
 .page_card {
@@ -234,16 +238,22 @@ p.page_context {
 @media (max-width:700px){
     .page_groups {
         margin-top: 20px;
-        height: 240px;
     }
     .page_group_left {
+        float: left;
+        height: unset;
+        min-width: 330px;
+        margin-left: 10px;
+    }
+    p.sub_context {
         display:none;
     }
     .page_group_right {
-        float: none;
+        float: left;
         width: 91%;
-        margin: 0px auto;
-        height: 220px;
+        height: unset;
+        min-width: 330px;
+        margin-left: 10px;
     }
     .tabs ul.tab_group li{
         font-size: 12px;
@@ -310,7 +320,7 @@ div.footer_text p.copyright {
     margin : 10px 5px;
 }
 h4.sub_title {
-    margin: 30px 0px 5px 0px;
+    margin: 22px 0px 5px 0px;
     color: #3bb8c2;
     float:left;
     text-align: left;
@@ -343,16 +353,17 @@ p.sub_context {
 }
 @media (max-width:700px){
     h4.sub_title {
-        font-size: 20px;
+        font-size: 16px;
+        margin: 9px 0px 5px 0px;
     }
     .message_card {
         float: left;
         width: 100%;
-        height: 230px;
+        height: 180px;
     }
     .page_faq {
-        margin-top: 35px;
-        height: 440px;
+        margin-top: 80px;
+        height: 400px;
         overflow-x: auto;
         overflow-y: hidden;
     }
@@ -371,7 +382,9 @@ p.sub_context {
         height: 44px;
         color: #FFF;
         text-shadow: 0 0 0 rgba(0,0,1,.15);
-        width: 144px;
+        width: 200px;
+        clear: left;
+        margin-top: 10px;
     }
     .page-post {
         margin: 30px 10px 0px 10px;

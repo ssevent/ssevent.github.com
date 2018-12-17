@@ -137,6 +137,11 @@ $(document).ready(function(){
         direction: "vertical"
     });
 
+    $(".page_faq").find(".sub_title").on("click", function(){
+        $(this).next().toggle();
+        console.log($(this).next());
+    });
+
     if($("#intro")){
 		$(".main").moveTo(2);
 	}
