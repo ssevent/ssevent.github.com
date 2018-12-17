@@ -122,7 +122,7 @@ p.page_context {
         background-position: 25% 0% !important;
     }
     h2.page_title {
-        font-size: 28px;
+        font-size: 26px;
         letter-spacing: 0px;
         line-height: 30px;
     }
@@ -349,6 +349,10 @@ p.sub_context {
         color: #FFF;
         text-shadow: 0 0 0 rgba(0,0,1,.15);
         width: 144px;
+    }
+    .page-post {
+        margin: 30px 10px 0px 10px;
+        height: 355px;
     }
 }
 .modal_sns {
