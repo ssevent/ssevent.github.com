@@ -192,7 +192,7 @@ $(document).ready(function(){
 
     //
     $("#btn_feedback").on("click", function(){
-        var txt = {"rating": "5", "comment": $("#tts_comment").val(), "star": $("#star").val()};
+        var txt = {"rating": "5", "comment": $("#tts_comment").val(), "rating": $("#star").val()};
         $.ajax({
             url: _url + "/data/feedback",
             type: 'POST',
