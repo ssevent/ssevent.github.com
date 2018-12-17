@@ -270,6 +270,11 @@ p.page_context {
 .btn.active {
     background-color: #3bb8c2;
 }
+.btn.disabled {
+    opacity:0.2;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20)
+}
 .page_message {
     position: relative;
     clear: both;
