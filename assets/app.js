@@ -53,6 +53,7 @@ var alertBox = {
             switch(sns){
                 case 0:
                     sendLink(code);
+                    return false;
                     break;
                 case 1:
                     url = 'http://twitter.com/share?url=https%3A%2F%2Fpostcard.selvy.ai%2Fsanta%2F%3Fcode%3D' + code + '&text=[셀바스AI]';
@@ -121,7 +122,7 @@ $(document).ready(function(){
         updateURL: false,
         beforeMove: function(index) {},
         loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
-        keyboard: true,                  // You can activate the keyboard controls
+        keyboard: false,                  // You can activate the keyboard controls
         responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
         direction: "vertical"
     });
