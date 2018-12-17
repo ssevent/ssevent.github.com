@@ -380,7 +380,7 @@ p.sub_context {
 }
 .modal_sns {
     margin: -10px auto 0;
-    width: 200px;
+    width: 245px;
     min-height: 60px;
 }
 .modal_sns ul li {
@@ -491,4 +491,49 @@ p.sub_context {
 /* Selected state of the stars */
 .rating-stars ul > li.star.selected > i.fa {
     color:#FF912C;
+}
+
+/*
+    Style
+ */
+.copyurl {
+    clear: both;
+    display: block;
+    width: 230px;
+    padding: 0 0 22px 11px;
+    font-size: 0;
+    text-align: left;
+    height: auto;
+    margin: 0 auto;
+    background: none;
+    line-height: 16px;
+}
+.copyurl .input_url {
+    display: inline-block;
+    width: 150px;
+    height: 25px;
+    padding: 0 9px!important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+    color: #222;
+    line-height: 25px;
+    vertical-align: middle;
+    text-decoration: none!important;
+    border: 1px solid #d8d8d8;
+    background-color: #f8f8f8;
+}
+.copyurl .button_url {
+    display: inline-block;
+    height: 25px;
+    margin-left: -1px;
+    padding: 0 7px 0 7px!important;
+    font-size: 12px;
+    text-align: center;
+    line-height: 25px;
+    color: #222!important;
+    text-decoration: none!important;
+    vertical-align: middle;
+    border: 1px solid #d8d8d8;
 }

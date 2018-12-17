@@ -43,6 +43,16 @@ var alertBox = {
         $("#shareModal").hide();
     },
     openShare : function(){
+		$( '#share_url' ).click(
+			function() {
+				var urlbox = document.getElementById('share_url_input');
+				urlbox.focus();
+				$("#share_url_input").focus().select();
+				document.execCommand( 'select' );
+				document.execCommand( 'copy' );
+				alert( '공유 URL 이 복사 되었습니다.' );
+			}
+		);
         $("#shareModal").show();
     },
     share : function(sns){
@@ -181,6 +191,7 @@ $(document).ready(function(){
             data: JSON.stringify(txt),
             success: function(res){
                 $("#code").val(res.code);
+                $("#share_url_input").text('https://voicecard.selvy.ai/santa/?code=' + res.code)
                 alertBox.openShare();
             },
             error: function(res){
