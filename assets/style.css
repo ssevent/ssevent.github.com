@@ -40,6 +40,10 @@
     100% { transform: rotate(360deg); }
 }
 
+.section {
+    overflow:hidden;
+}
+
 html {
     height: 100%;
 }
@@ -96,6 +100,7 @@ ul {
     margin: 0 auto 0;
     max-width: 950px;
     min-height: 640px;
+    overflow:hidden;
     z-index: 3;
 }
 section.page1 {
@@ -221,6 +226,7 @@ p.page_context {
 @media (max-width:700px){
     .page_groups {
         margin-top: 20px;
+        height: 240px;
     }
     .page_group_left {
         display:none;
@@ -229,10 +235,13 @@ p.page_context {
         float: none;
         width: 91%;
         margin: 0px auto;
-        min-width: 310px;
+        height: 220px;
     }
     .tabs ul.tab_group li{
         font-size: 12px;
+    }
+    .contents textarea{
+        min-height: 135px;
     }
 }
 
@@ -426,7 +435,7 @@ p.sub_context {
 
 @media (max-width:700px){
     .modal-content {
-        width: 245px;
+        width: 255px;
         margin: 60% auto;
     }
     .message-contents {
@@ -438,7 +447,8 @@ p.sub_context {
     Rating
  */
 .rating-stars {
-    margin-top: 20px;
+    margin-top: 10px;
+    float: left;
 }
 .rating-stars ul {
     list-style-type:none;

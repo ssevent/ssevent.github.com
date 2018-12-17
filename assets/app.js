@@ -33,7 +33,7 @@ var code = '';
 
 var alertBox = {
     open : function(text){
-        $("#messageModal").find("message-contents").text(text);
+        $("#messageModal").find(".message-contents").text(text);
         $("#messageModal").show();
     },
     close : function(){
@@ -192,6 +192,11 @@ $(document).ready(function(){
 
     //
     $("#btn_feedback").on("click", function(){
+        var comment = $("#tts_comment").val();
+        if(comment.length < 10){
+			alertBox.open("코멘트를 남겨주세요! ( 10자 이상 )");
+			return false;
+		}
         var txt = {"rating": "5", "comment": $("#tts_comment").val(), "rating": $("#star").val()};
         $.ajax({
             url: _url + "/data/feedback",
@@ -207,7 +212,6 @@ $(document).ready(function(){
             },
             error: function(res){
                 alertBox.open("전송 중 에러가 발생했습니다.");
-                console.log(res);
             },
             complete: loading.end()
         });
@@ -237,12 +241,11 @@ $(document).ready(function(){
     });
     $('#tts_comment').keyup();
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const code = urlParams.get('code');
 
     $("#btn2_listen").on("click", function(){
+		const urlParams = new URLSearchParams(window.location.search);
+		const code = urlParams.get('code');
         if(code) {
-            console.log(code);
             var mp3 = "https://s3.ap-northeast-2.amazonaws.com/selvydeeptts/santa/" + code + ".mp3";
             var audio = document.createElement("audio");
             audio.preload = "auto";
