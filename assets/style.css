@@ -288,11 +288,12 @@ p.page_context {
 .page_message {
     position: relative;
     clear: both;
-    margin-top: 30px;
+    margin: 30px auto;
+    width: 700px;
     min-height: 730px;
     zoom: 1;
     background-image: url(../images/card_01.png);
-    background-size: auto 100%;
+    background-size: contain;
     background-repeat: no-repeat;
 }
 .message_card {
@@ -346,12 +347,18 @@ p.sub_context {
     margin: 70px 10px 0px 10px;
     height: 355px;
 }
+.card_button {
+    margin-top: 400px;
+}
 .detail_view {
     width: 20px;
     height: 20px;
     vertical-align: middle;
 }
 @media (max-width:700px){
+    .page_message {
+        width: 100%;
+    }
     h4.sub_title {
         font-size: 16px;
         margin: 9px 0px 5px 0px;
@@ -360,6 +367,9 @@ p.sub_context {
         float: left;
         width: 100%;
         height: 180px;
+    }
+    .card_button {
+        margin-top: 200px;
     }
     .page_faq {
         margin-top: 80px;
