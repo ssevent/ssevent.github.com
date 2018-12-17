@@ -175,7 +175,7 @@ $(document).ready(function(){
             type: 'POST',
             contentType: "application/json",
             beforeSend: function(xhr) {
-                loading.load(this);
+				loading.load('#btn_send');
             },
             data: JSON.stringify(txt),
             success: function(res){
@@ -186,7 +186,7 @@ $(document).ready(function(){
                 alertBox.open("전송 중 에러가 발생했습니다.");
                 console.log(res);
             },
-            complete: loading.end(this)
+            complete: loading.end('#btn_send')
         });
     });
 
