@@ -244,14 +244,15 @@ p.page_context {
     position: absolute;
     top: 220px;
     left: 50%;
-    margin-left: -27px;
+    margin-left: -12px;
     height: 55px;
     width: 25px;
     z-index: 10;
 }
 .mouse_wheel.mobile {
     display:none;
-    top: 570px;
+    top: unset;
+    bottom: 120px;
 }
 .mouse_wheel img.arrow {
     height: 55px;
