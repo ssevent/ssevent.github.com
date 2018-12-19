@@ -335,9 +335,9 @@ p.page_context {
 .page_message {
     position: relative;
     clear: both;
-    margin: 30px auto;
+    margin: 30px auto 0px auto;
     width: 700px;
-    min-height: 730px;
+    min-height: 470px;
     zoom: 1;
     background-image: url(../images/card_02.png);
     background-size: contain;
@@ -357,6 +357,7 @@ p.text_count {
 }
 img.footer_logo {
     float:left;
+    margin-left: 5px;
 }
 div.footer_text {
     float: left;
@@ -365,7 +366,7 @@ div.footer_text {
 }
 div.footer_text p.copyright {
     text-align: left;
-    margin: 18px 15px;
+    margin: 18px 10px;
 }
 div.footer_link {
     margin-top: 30px;
@@ -430,6 +431,7 @@ p.sub_context {
     .page_message {
         width: 100%;
         background-image: url(../images/card_01.png);
+        min-height: 300px;
     }
     h4.sub_title {
         font-size: 16px;
