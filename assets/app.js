@@ -104,6 +104,7 @@ function sendLink(code) {
     });
 }
 
+
 $(document).ready(function(){
 	//
 	// https://postcard.selvy.ai/santa/?code= ?
@@ -135,6 +136,10 @@ $(document).ready(function(){
         keyboard: false,                  // You can activate the keyboard controls
         responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
         direction: "vertical"
+    });
+
+    $(".mouse_wheel").on("click", function(){
+        $(".main").moveDown();
     });
 
     $(".page_faq").find(".sub_title").on("click", function(){
