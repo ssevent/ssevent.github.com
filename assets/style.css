@@ -359,8 +359,8 @@ img.footer_logo {
     float:left;
 }
 div.footer_text {
-    float: right;
-    width: calc(100% - 150px);
+    float: left;
+    width: calc(100% - 250px);
     font-size: 13px;
 }
 div.footer_text p.copyright {
@@ -368,8 +368,28 @@ div.footer_text p.copyright {
     margin : 10px 5px;
 }
 div.footer_link {
-    float:right;
-    background-image: url(../images/sns.png)
+    margin-top: 20px;
+    float: right;
+    width: 100px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/sns.png);
+}
+ul.link_btn {
+    width: 100%;
+    height: 100%;
+}
+ul.link_btn li {
+    display: block;
+    float:left;
+    width: 33.3%;
+    height: 100%;
+}
+ul.link_btn li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
 }
 h4.sub_title {
     margin: 22px 0px 5px 0px;
@@ -450,6 +470,13 @@ p.sub_context {
     .page-post {
         margin: 30px 10px 0px 10px;
         height: 355px;
+    }
+    div.footer_link {
+        display : none;
+    }
+    div.footer_text {
+        width: calc(100% - 145px);
+        font-size: 11px;
     }
 }
 .modal_sns {
