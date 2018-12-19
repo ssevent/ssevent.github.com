@@ -134,7 +134,27 @@ p.page_context {
     font-size: 16px;
     color: #FFF;
 }
-@media (max-width:700px){
+@media (max-width:400px){
+    body {
+        background-size: 1600px !important;
+        background-position: 25% 0% !important;
+    }
+    body.card {
+        background-size: 100% !important;
+        background: url(../images/m_page.png) top no-repeat rgb(255, 255, 255);
+    }
+    h2.page_title {
+        font-size: 26px;
+        letter-spacing: 0px;
+        line-height: 30px;
+    }
+    p.page_context {
+        font-size: 12px;
+        color: #FFF;
+    }
+}
+
+@media (min-width:400px) and (max-width:700px){
     body {
         background-size: 1600px !important;
         background-position: 25% 0% !important;
