@@ -364,11 +364,11 @@ div.footer_text {
     font-size: 13px;
 }
 div.footer_text p.copyright {
-    text-align : left;
-    margin : 10px 5px;
+    text-align: left;
+    margin: 18px 15px;
 }
 div.footer_link {
-    margin-top: 20px;
+    margin-top: 30px;
     float: right;
     width: 100px;
     height: 30px;
