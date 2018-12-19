@@ -339,7 +339,7 @@ p.page_context {
     width: 700px;
     min-height: 730px;
     zoom: 1;
-    background-image: url(../images/card_01.png);
+    background-image: url(../images/card_02.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -429,6 +429,7 @@ p.sub_context {
 @media (max-width:700px){
     .page_message {
         width: 100%;
+        background-image: url(../images/card_01.png);
     }
     h4.sub_title {
         font-size: 16px;
