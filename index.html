@@ -93,6 +93,7 @@
     하지만 앞으로도 그렇게 살면 내년에도 선물을 못 받겠지?
     내년엔 꼭 착한 사람이 되서 우리 모두 선물을 받는 사람이 되자!
                                 </textarea>
+                                <p class="text_tip">직접 작성해 보세요</p>
                                 <p id="tts_txt_count" class="text_count">0 / 200 자</p>
                             </div>
                         </form>
@@ -199,6 +200,8 @@
             ev.preventDefault();
             $(t + " li.active").removeClass('active');
             $(t + " li").eq(i).addClass('active');
+            if(i > 3) $('.text_tip').show();
+            else $('.text_tip').hide();
             $('.contents textarea.txt').val(text_template[i]);
 			$('#tts_txt').keyup();
         });

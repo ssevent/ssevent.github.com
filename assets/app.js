@@ -106,6 +106,7 @@ function sendLink(code) {
 
 var parallex = function () {
 	//
+    console.log('One Page Scroll Init')
 	$(".main").onepage_scroll({
 		sectionContainer: "section",
 		easing: "ease",
@@ -122,15 +123,17 @@ var parallex = function () {
 	});
 };
 
-$(window).bind( 'orientationchange', function(e){
-    // Type pretty code here
-    parallex();
-});
+var doOnOrientationChange = function(){
+	parallex();
+};
 
 $(document).ready(function(){
 	//
 	// https://postcard.selvy.ai/santa/?code= ?
     //
+	$( window ).resize( function() {
+		parallex();
+	} );
     Kakao.init("a522881bad66036a1c1c21306321d691");
     window.URLSearchParams = window.URLSearchParams || function (searchString) {
         var self = this;
