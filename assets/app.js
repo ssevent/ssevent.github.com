@@ -104,6 +104,28 @@ function sendLink(code) {
     });
 }
 
+var parallex = function () {
+	//
+	$(".main").onepage_scroll({
+		sectionContainer: "section",
+		easing: "ease",
+		animationTime: 1000,
+		pagination: true,
+		updateURL: false,
+		beforeMove: function(index) {
+			$( '.arrow' ).animate({ bottom : "10px" },4000);
+		},
+		loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
+		keyboard: false,                  // You can activate the keyboard controls
+		responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
+		direction: "vertical"
+	});
+};
+
+$(window).bind( 'orientationchange', function(e){
+    // Type pretty code here
+    parallex();
+});
 
 $(document).ready(function(){
 	//
@@ -124,19 +146,7 @@ $(document).ready(function(){
         };
     };
 
-    //
-    $(".main").onepage_scroll({
-        sectionContainer: "section",
-        easing: "ease",
-        animationTime: 1000,
-        pagination: true,
-        updateURL: false,
-        beforeMove: function(index) {},
-        loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
-        keyboard: false,                  // You can activate the keyboard controls
-        responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
-        direction: "vertical"
-    });
+	parallex();
 
     $(".mouse_wheel").on("click", function(){
         $(".main").moveDown();
