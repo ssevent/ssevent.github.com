@@ -301,7 +301,8 @@ p.page_context {
         font-size: 12px;
     }
     .contents textarea{
-        min-height: 135px;
+        min-height: 110px;
+        font-size: 13px;
     }
 }
 .btn {
@@ -350,7 +351,7 @@ p.text_tip {
     color: red;
 }
 p.text_count {
-    width: 65px;
+    width: 80px;
     margin: 0px 5px;
     padding: 0px;
     font-size: 14px;
