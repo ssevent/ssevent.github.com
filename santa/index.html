@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130813910-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-130813910-1');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,user-scalable=no">
+    <meta property="og:url" content="voicecard.selvy.ai/santa">
+    <meta property="og:title" content="인공지능 산타소환 이벤트">
+    <meta property="og:description" content="누군가의 마음이 담긴 메시지가 도착했습니다.">
+    <meta property="og:image" content="https://voicecard.selvy.ai/images/santa_img_01.png?raw=true">
+    <meta property="og:site_name" content="음성카드 확인하기">
+    <title>SELVAS AI와 함께하는 인공지능 산타소환 이벤트</title>
+    <link rel="stylesheet" href="/assets/onepage-scroll.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="/assets/jquery.onepage-scroll.js"></script>
+    <script src="https://voicecard.selvy.ai/assets/js/xvoice-audio-0.1.1.min.js"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script src="/assets/app.js"></script>
+</head>
+<body class="fonts-loaded card">
+<div class="wrapper">
+    <div id="top">
+        <div class="header">
+            <img src="/images/title_01.png" alt="SELVAS AI X Santa Voice" />
+        </div>
+    </div>
+    <div id="container" class="main">
+        <section id="share" class="page1">
+            <div class="page_container">
+                <h2 class="page_title">누군가의 마음이 담긴<br>
+                    <span>메시지가 도착</span>했습니다</h2>
+                <p class="page_context">산타가 직접 메시지를 들려줄꺼니까<br/>꼭 소리를 키워서 들어보세요!</p>
+                <div class="page_message">
+                    <div class="message_card">
+                        <div class="button_group card_button">
+	                        <button id="btn2_listen" class="btn active" title="" type="button"><span>음성 들어보기</span><div class="loader"></div></button>
+	                        <a href="/" onclick="gtag('event', 'click', {'send_to': 'UA-130813910-1','event_category': 'make_me_too', 'event_action': 'click'});"><button class="btn" title="" type="button" style="background-color:#ff983b;">나도 음성카드 만들기</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <img src="/images/logo.png" class="footer_logo"/>
+                    <div class="footer_text">
+                        <p class="copyright">서울특별시 금천구 가산디지털1로 19, 19~20층(가산동,대륭테크노타운 18차)
+                            <br/>사업제휴문의 +82 2 6190 7500
+                            <br/>© 2017 SELVAS AI Corp.</p>
+                    </div>
+                    <div class="footer_link">
+                        <ul class="link_btn">
+                            <li><a href="https://www.selvasai.com" target="_blank" onclick="gtag('event', 'click', {'send_to': 'UA-130813910-1','event_category': 'footer_link', 'event_action': 'click', 'event_label': 'homepage'});"></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCgC7Y8_UenihqwlUWd5dXCQ" target="_blank" onclick="gtag('event', 'click', {'send_to': 'UA-130813910-1','event_category': 'footer_link', 'event_action': 'click', 'event_label': 'youtube'});"></a></li>
+                            <li><a href="https://tts.selvy.ai" target="_blank" onclick="gtag('event', 'click', {'send_to': 'UA-130813910-1','event_category': 'footer_link', 'event_action': 'click', 'event_label': 'blog'});"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<div id="messageModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" onClick="alertBox.close()">&times;</span>
+        <p class="message-contents">잘못된 음성 카드 정보입니다.</p>
+    </div>
+</div>
+</body>
+</html>
