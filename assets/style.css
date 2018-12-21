@@ -315,7 +315,7 @@ p.page_context {
     color: #FFF;
     text-shadow: 0 0 0 rgba(0,0,1,.15);
     width: 174px;
-    margin: 0px 5px;
+    margin: 0px 2px;
     vertical-align: top;
 }
 .btn.active {
@@ -474,7 +474,7 @@ p.sub_context {
         height: 44px;
         color: #FFF;
         text-shadow: 0 0 0 rgba(0,0,1,.15);
-        width: 150px;
+        width: 160px;
         clear: left;
         margin-top: 10px;
     }
