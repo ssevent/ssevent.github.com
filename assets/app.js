@@ -190,6 +190,7 @@ $(document).ready(function(){
   		responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
   		direction: "vertical"
   	});
+
     Kakao.init("05e498922eaae22574ef07c723d026dc"); //Kakao
 
     window.URLSearchParams = window.URLSearchParams || function (searchString) {
@@ -205,10 +206,6 @@ $(document).ready(function(){
             }
         };
     };
-
-    $(".mouse_wheel").on("click", function(){
-        $(".main").moveDown();
-    });
 
     var prev_sub_context = null;
     $(".page_faq").find(".sub_title").on("click", function(){
@@ -233,6 +230,11 @@ $(document).ready(function(){
     if($("#intro")){
 		$(".main").moveTo(2);
 	}
+
+	$('#tts_txt').blur(function() {
+		$(".main").moveTo(2);
+	});
+
 
     var tts_txt = '';
     var va_status = false;

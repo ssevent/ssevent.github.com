@@ -15,25 +15,25 @@
     <meta property="og:url" content="voicecard.selvy.ai">
     <meta property="og:title" content="인공지능 산타소환 이벤트">
     <meta property="og:description" content="올 겨울 산타가 당신의 못 다한 이야기를 전해드려요">
-    <meta property="og:image" content="https://voicecard.selvy.ai/images/title_img.png?raw=true">
+    <meta property="og:image" content="https://voicecard.selvy.aiimages/title_img.png?raw=true">
     <title>SELVAS AI와 함께하는 인공지능 산타소환 이벤트</title>
-    <link rel="stylesheet" href="/assets/onepage-scroll.css" />
-    <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="stylesheet" href="assets/onepage-scroll.css" />
+    <link rel="stylesheet" href="assets/style.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" />
     <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
-    <script src="/assets/jquery.onepage-scroll.js"></script>
+    <script src="assets/jquery.onepage-scroll.js"></script>
     <script src="https://voicecard.selvy.ai/assets/js/xvoice-audio-0.1.1.min.js"></script>
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-    <script src="/assets/app.js"></script>
+    <script src="assets/app.js"></script>
 </head>
 <body class="fonts-loaded makecard" style="">
 <div class="wrapper">
     <div id="top">
         <div class="header">
-            <img src="/images/title_01.png" alt="SELVAS AI X Santa Voice" />
+            <img src="images/title_01.png" alt="SELVAS AI X Santa Voice" />
         </div>
     </div>
     <div id="container" class="main">
@@ -42,8 +42,8 @@
                 <h2 class="page_title"><span>산타!</span> 내 궁금증을 풀어줘<br></h2>
                 <p class="page_context">인공지능 산타 목소리에 대해 궁금하신 부분을 풀어드려요</p>
                 <p class="page_context">음성합성의 기초부터 활용 분야까지 간략하게 소개합니다.<br/>셀바스에이아이 홈페이지를 통해 더욱 더 자세한 내용을 확인하실 수 있습니다.</p>
-                <div class="mouse_wheel"><img src="/images/scroll_white.png" class="arrow" /></div>
-                <div class="mouse_wheel mobile"><img src="/images/scroll.png" class="arrow" /></div>
+                <div class="mouse_wheel"><img src="images/scroll_white.png" class="arrow" /></div>
+                <div class="mouse_wheel mobile"><img src="images/scroll.png" class="arrow" /></div>
 
                 <div class="page_faq" id="faqs">
                     <div class="page_group_left">
@@ -81,7 +81,7 @@
                 <h2 class="page_title"><span>산타!</span> 내 마음을 전해줘</h2>
                 <p class="page_context">올 겨울 산타가 당신의 못다 한 이야기를 전해드려요.</p>
                 <p class="page_context">인공지능 전문기업 ‘셀바스 AI’가 산타소환 기회를 선물합니다.<br/>산타 목소리로 고마운 사람들에게 전하는 음성카드!</p>
-                <div class="mouse_wheel"><img src="/images/scroll_white.png" class="arrow" /></div>
+                <div class="mouse_wheel"><img src="images/scroll_white.png" class="arrow" /></div>
                 <div class="mouse_wheel mobile"><img src="images/scroll.png" class="arrow" /></div>
                 <div class="page_groups">
                     <div class="page_card page_group_left santa-img">
@@ -153,11 +153,12 @@
                     </div>
                     <div class="button_group">
                         <button id="btn_feedback" class="btn active" title="" type="button">의견 남기기</button>
-                        <a href="#"><button id="btn_forms" class="btn" title="" type="button"><span>설문지 작성하기</span></button></a>
+                        <a href="#"><button id="btn_forms" class="btn highlight" title="" type="button"  data-tooltip="I’m the tooltip text."><span>설문지 작성하기</span></button></a>
+                        <p class="event_text">'설문지 작성하기' 참여해 주시면 푸짐한 경품 혜택을 드립니다</p>
                     </div>
                 </div>
                 <div class="footer">
-                    <img src="/images/logo.png" class="footer_logo"/>
+                    <img src="images/logo.png" class="footer_logo"/>
                     <div class="footer_text">
                         <p class="copyright">서울특별시 금천구 가산디지털1로 19, 19~20층(가산동,대륭테크노타운 18차)
                             <br/>사업제휴문의 +82 2 6190 7500
@@ -210,7 +211,7 @@
     <div class="notice-modal-content">
         <span class="close" onClick="noticeBox.close()" style="color:#FFF">&times;</span>
     </div>
-    <img src="/images/event_notice.png" style="visibility: hidden;"/>
+    <img src="images/event_notice.png" style="visibility: hidden;"/>
 </div>
 <script>
     var tabs = function(){
@@ -240,7 +241,7 @@
     }
 
     $.ajax({
-        url: "/images/event_notice.png",
+        url: "images/event_notice.png",
         type: 'GET',
         success: function(res){
             var ok = sessionStorage.getItem("isCloseEventNotice", "true");
