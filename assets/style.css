@@ -24,17 +24,6 @@
     }
 }
 
-@keyframes fade-in-move-down {
-    0% {
-        opacity: 0;
-        transform: translateY(-3rem);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 textarea {
     resize: none;
 }
@@ -71,7 +60,7 @@ body {
     height: 100%;
     -webkit-font-smoothing: antialiased;
     background-position-x: center;
-    background: url(../images/page_01.png) top no-repeat rgb(255, 255, 255);
+    background: url(/images/page_01.png) top no-repeat rgb(255, 255, 255);
 }
 ul {
      margin: 0;
@@ -131,7 +120,7 @@ section.page1 {
     overflow:hidden;
 }
 h2.page_title {
-    color: #ffb453;
+    color: #ffaa53;
     font-size: 45px;
     letter-spacing: 0px;
     font-weight: normal;
@@ -145,39 +134,25 @@ p.page_context {
     font-size: 16px;
     color: #FFF;
 }
-@media (max-width:400px){
+@media (max-width:700px){
     body {
         background-size: 1600px !important;
         background-position: 25% 0% !important;
     }
+    body.makecard {
+        background-size: 100% !important;
+        background: url(/images/m_page_01.png) top no-repeat rgb(255, 255, 255);
+    }
     body.card {
         background-size: 100% !important;
-        background: url(../images/m_page.png) top no-repeat rgb(255, 255, 255);
+        background: url(/images/m_page.png) top no-repeat rgb(255, 255, 255);
     }
     h2.page_title {
         font-size: 26px;
         letter-spacing: 0px;
         line-height: 30px;
-    }
-    p.page_context {
-        font-size: 12px;
-        color: #FFF;
-    }
-}
-
-@media (min-width:400px) and (max-width:700px){
-    body {
-        background-size: 1600px !important;
-        background-position: 25% 0% !important;
-    }
-    body.card {
-        background-size: 100% !important;
-        background: url(../images/m_page.png) top no-repeat rgb(255, 255, 255);
-    }
-    h2.page_title {
-        font-size: 26px;
-        letter-spacing: 0px;
-        line-height: 30px;
+        margin-top: 0px;
+        margin-bottom: 5px;
     }
     p.page_context {
         font-size: 12px;
@@ -211,7 +186,7 @@ p.page_context {
     border: 1px solid #dadada;
 }
 .santa-img {
-    background-image: url(../images/santa_img_01.png);
+    background-image: url(/images/santa_img_01.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -236,7 +211,7 @@ p.page_context {
     border-bottom: 1px solid #dadada;
     padding: 10px 0px 0px 0px;
     background-color: #f6f6f6;
-    color: #c5c5c5;
+    color: #7e7e7e;
     font-weight: normal;
     cursor: pointer;
 }
@@ -254,7 +229,7 @@ p.page_context {
     min-height: 221px;
     border: 0px solid;
     padding: 9px;
-    font-size: 18px;
+    font-size: 16px;
     outline: none;
  }
 .comment textarea{
@@ -278,12 +253,11 @@ p.page_context {
     height: 55px;
     width: 25px;
     z-index: 10;
-    animation: fade-in-move-down 1s;
 }
 .mouse_wheel.mobile {
     display:none;
     top: unset;
-    bottom: 200px;
+    bottom: 230px;
 }
 .mouse_wheel img.arrow {
     height: 55px;
@@ -295,7 +269,6 @@ p.page_context {
     }
     .mouse_wheel.mobile {
         display: block;
-        animation: fade-in-move-down 1s;
     }
     .page_groups {
         margin-top: 20px;
@@ -351,7 +324,7 @@ p.page_context {
     width: 700px;
     min-height: 470px;
     zoom: 1;
-    background-image: url(../images/card_02.png);
+    background-image: url(/images/card_02.png);
     background-size: 700px;
     background-repeat: no-repeat;
 }
@@ -362,14 +335,15 @@ p.page_context {
 }
 p.text_tip {
     width: 180px;
-    margin: 5px 10px;
+    margin: 0px 10px;
     text-align:left;
     font-size: 14px;
     float: left;
+    color: red;
 }
 p.text_count {
     width: 90px;
-    margin: 5px 10px;
+    margin: 0px 10px;
     padding: 0px;
     font-size: 14px;
 
@@ -395,7 +369,7 @@ div.footer_link {
     height: 30px;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url(../images/sns.png);
+    background-image: url(/images/sns.png);
 }
 ul.link_btn {
     width: 100%;
@@ -450,7 +424,7 @@ p.sub_context {
 @media (max-width:700px){
     .page_message {
         width: 100%;
-        background-image: url(../images/card_01.png);
+        background-image: url(/images/card_01.png);
         min-height: 300px;
     }
     h4.sub_title {
@@ -466,17 +440,18 @@ p.sub_context {
         margin-top: 200px;
     }
     .page_faq {
-        margin-top: 80px;
-        height: 400px;
+        margin-top: 50px;
+        height: 330px;
         overflow-x: auto;
         overflow-y: hidden;
+        background-color: white;
     }
     p.sub_context {
         margin: 3px 2px;
         color: #000;
         float:left;
         text-align: left;
-        font-size: 12px;
+        font-size: 13px;
     }
     .page_message {
         background-size: 100%;
@@ -486,20 +461,23 @@ p.sub_context {
         height: 44px;
         color: #FFF;
         text-shadow: 0 0 0 rgba(0,0,1,.15);
-        width: 200px;
+        width: 160px;
         clear: left;
         margin-top: 10px;
     }
     .page-post {
-        margin: 30px 10px 0px 10px;
-        height: 355px;
+        margin: 30px auto 10px;
+        height: 300px;
+    }
+    .footer{
+        margin: -30px auto 0;
     }
     div.footer_link {
         display : none;
     }
     div.footer_text {
         width: calc(100% - 150px);
-        font-size: 11px;
+        font-size: 10px;
     }
 }
 .modal_sns {
@@ -523,7 +501,7 @@ p.sub_context {
      width: 40px;
      height: 40px;
      margin: 0 7px 10px;
-     background: url(../images/share.png) no-repeat;
+     background: url(/images/share.png) no-repeat;
      background-size: 200px 40px;
  }
 .modal_sns ul li span.kakao { background-position: 0 0; }
@@ -560,7 +538,7 @@ p.sub_context {
 .close {
     color: #aaa;
     float: right;
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
 }
 
@@ -578,6 +556,27 @@ p.sub_context {
     }
     .message-contents {
         margin: 35px 0px;
+    }
+}
+
+/* Modal Notice Box */
+.notice-modal-content {
+    background-image: url("/images/event_notice.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 600px; /* Could be more or less, depending on screen size */
+    height: 660px;
+}
+
+@media (max-width:700px){
+    .notice-modal-content {
+        width: calc(100% - 50px);
+        height: 75%;
+        margin: 10% auto;
     }
 }
 
@@ -623,7 +622,7 @@ p.sub_context {
 .copyurl {
     clear: both;
     display: block;
-    width: 230px;
+    width: 240px;
     padding: 0 0 22px 11px;
     font-size: 0;
     text-align: left;

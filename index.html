@@ -1,65 +1,77 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130813910-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-130813910-1');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,user-scalable=no">
-    <title>Selvas AI와 함께하는 인공지능 산타소환 이벤트</title>
-    <link rel="stylesheet" href="assets/onepage-scroll.css" />
-    <link rel="stylesheet" href="assets/style.css" />
+    <meta property="og:url" content="voicecard.selvy.ai">
+    <meta property="og:title" content="인공지능 산타소환 이벤트">
+    <meta property="og:description" content="올 겨울 산타가 당신의 못 다한 이야기를 전해드려요">
+    <meta property="og:image" content="https://voicecard.selvy.ai/images/title_img.png?raw=true">
+    <title>SELVAS AI와 함께하는 인공지능 산타소환 이벤트</title>
+    <link rel="stylesheet" href="/assets/onepage-scroll.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" />
     <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
-    <script src="assets/jquery.onepage-scroll.js"></script>
+    <script src="/assets/jquery.onepage-scroll.js"></script>
     <script src="https://voicecard.selvy.ai/assets/js/xvoice-audio-0.1.1.min.js"></script>
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-    <script src="assets/app.js"></script>
+    <script src="/assets/app.js"></script>
 </head>
-<body class="fonts-loaded" style="">
+<body class="fonts-loaded makecard" style="">
 <div class="wrapper">
     <div id="top">
         <div class="header">
-            <img src="images/title_01.png" alt="Selvas AI X Santa Voice" />
+            <img src="/images/title_01.png" alt="SELVAS AI X Santa Voice" />
         </div>
     </div>
     <div id="container" class="main">
         <section id="faq" class="page1">
             <div class="page_container">
-                <h2 class="page_title">인공지능 AI를 통해<br>
-                    <span>크리스마스 선물</span>을 전하세요!</h2>
-                <p class="page_context">인공지능 전문기업 ‘셀바스AI’가 산타소환 기회를 선물합니다.<br/>원하는 메시지로 산타를 소환하여 고마운 마음을 전하세요.</p>
-                <div class="mouse_wheel"><img src="images/scroll_white.png" class="arrow" /></div>
-                <div class="mouse_wheel mobile"><img src="images/scroll.png" class="arrow" /></div>
+                <h2 class="page_title"><span>산타!</span> 내 궁금증을 풀어줘<br></h2>
+                <p class="page_context">인공지능 산타 목소리에 대해 궁금하신 부분을 풀어드려요</p>
+                <p class="page_context">음성합성의 기초부터 활용 분야까지 간략하게 소개합니다.<br/>셀바스에이아이 홈페이지를 통해 더욱 더 자세한 내용을 확인하실 수 있습니다.</p>
+                <div class="mouse_wheel"><img src="/images/scroll_white.png" class="arrow" /></div>
+                <div class="mouse_wheel mobile"><img src="/images/scroll.png" class="arrow" /></div>
 
                 <div class="page_faq" id="faqs">
                     <div class="page_group_left">
                         <h4 class="sub_title">Q. 사람이 실제로 말하고 있는 건가요?</h4>
                         <p class="sub_context">아닙니다. 문자를 사람의 목소리로 만들어주는 음성합성이라는 기술입니다. 음성합성기에 누군가에게 들려주고 싶은 메시지를 입력하면 마치 사람이 말하는 것 처럼 자연스럽고 멋진 목소리로 만들어 준답니다.</p>
 
-                        <h4 class="sub_title">Q. 어떤 문자라도 읽을 수 있는 건가요?</h4>
-                        <p class="sub_context">한글, 영어, 숫자는 물론이고 다양한 특수문자도 읽어줄 수 있답니다.</p>
-
-                        <h4 class="sub_title">Q. 인공지능(AI) 음성합성기란 무엇인가요?</h4>
-                        <p class="sub_context">인공지능 기술을 음성합성에 접목한 것이죠. 기존 기술로는 표현하기 어려웠던 미세한 억양표현이나 호흡까지 표현할 수 있습니다.  전통적인 합성 기술에 비해 좀 더 자연스럽고 감성적인 목소리를 들여줍니다. 뿐만 아니라, 여러분들의 목소리, 연예인의 목소리를 똑같이 모방할 수 도 있는 최첨단 기술입니다.</p>
-
-                        <h4 class="sub_title">Q. 인공지능(AI) 기술에는 또 어떤것들이 있나요?</h4>
-                        <p class="sub_context">셀바스에이아이 홈페이지를 통해서 인공지능 기술과 솔루션에 대한 자세한 내용을 확인할 수 있습니다. <a href="https://www.selvasai.com/artificial-intelligence-key-technology.php" target="_blank" alt="자세히보기"><img src="images/detail.png" class="detail_view" /></a></p>
-
-                    </div>
-                    <div class="page_group_right">
                         <h4 class="sub_title">Q. 다른 목소리도 만들 수 있나요?</h4>
                         <p class="sub_context">음성합성기는 실제 사람 목소리 데이터를 기반으로 만들기 때문에, 산타 할아버지 목소리 뿐 아니라, 유명 연예인이나 앵커, 혹은 내 자신의 목소리까지 만들 수 있습니다.</p>
 
                         <h4 class="sub_title">Q. 어색한 발음을 자연스럽게 바꿀 수 없나요?</h4>
                         <p class="sub_context">작성하신 메시지 발음이 어색한 부분이 있다면, 부자연스러운 부분에 띄어쓰기나 쉼표를 추가해보세요.
                             음성합성기의 문장이 좀 더 자연스러워 질 거에요.</p>
-
+                        
                         <h4 class="sub_title">Q. 어떤 분야에서 사용되나요?</h4>
                         <p class="sub_context">이미 우리주변에서 매일 이용하는 서비스에서 사용되고 있어요. 지하철과 버스정류장에서 흘러나오는 안내방송, 아파트 안내방송, 전자책, ARS 자동응답시스템에 음성합성 기술이 널리 사용되고 있습니다.  또 요즘 광고에 많이 나오는 인공지능 스피커의 목소리도 음성합성 기술로 만들어진 것 입니다.</p>
+                    </div>
+                    <div class="page_group_right">
 
+
+                        <h4 class="sub_title">Q. 인공지능(AI) 음성합성기란 무엇인가요?</h4>
+                        <p class="sub_context">인공지능 기술을 음성합성에 접목한 것이죠. 기존 기술로는 표현하기 어려웠던 미세한 억양표현이나 호흡까지 표현할 수 있습니다.  전통적인 합성 기술에 비해 좀 더 자연스럽고 감성적인 목소리를 들여줍니다. 뿐만 아니라, 여러분들의 목소리, 연예인의 목소리를 똑같이 모방할 수 도 있는 최첨단 기술입니다.</p>
+                        
                         <h4 class="sub_title">Q. 음성합성(TTS) 기술에 대해서 알고 싶어요.</h4>
-                        <p class="sub_context">셀바스에이아이 기술 블로그를 통해서 음성합성 기술에 대한 자세한 내용을 확인할 수 있습니다. <a href="https://www.selvasai.com/speech-solution.php?tabno=1" target="_blank"  alt="자세히보기"><img src="images/detail.png" class="detail_view" /></a></p>
+                        <p class="sub_context">셀바스에이아이 기술 블로그를 통해서 음성합성 기술에 대한 자세한 내용을 확인할 수 있습니다. <a href="https://tts.selvy.ai" target="blank"  alt="자세히보기" onclick="gtag('event', 'click', {'send_to': 'UA-130813910-1','event_category': 'link_blog', 'event_action': 'click'});"><img src="images/detail.png" class="detail_view" /></a></p>
+                        
+                        <h4 class="sub_title">Q. 인공지능(AI) 기술에는 또 어떤것들이 있나요?</h4>
+                        <p class="sub_context">셀바스에이아이 홈페이지를 통해서 인공지능 기술과 솔루션에 대한 자세한 내용을 확인할 수 있습니다. <a href="https://www.selvasai.com/artificial-intelligence-key-technology.php" target="blank" alt="자세히보기" onclick="gtag('event', 'click', {'send_to': 'UA-130813910-1','event_category': 'link_homepage', 'event_action': 'click'});"><img src="images/detail.png" class="detail_view" /></a></p>
+
                     </div>
                 </div>
             </div>
@@ -67,9 +79,9 @@
         <section id="intro" class="page2">
             <div class="page_container">
                 <h2 class="page_title"><span>산타!</span> 내 마음을 전해줘</h2>
-                <p class="page_context">올 겨울 산타가 당신의 못다한 이야기를 전해드려요.</p>
-                <p class="page_context">인공지능 전문기업 ‘셀바스AI’가 산타소환 기회를 선물합니다.<br/>원하는 메시지로 산타를 소환하여 고마운 마음을 전하세요.</p>
-                <div class="mouse_wheel"><img src="images/scroll_white.png" class="arrow" /></div>
+                <p class="page_context">올 겨울 산타가 당신의 못다 한 이야기를 전해드려요.</p>
+                <p class="page_context">인공지능 전문기업 ‘셀바스 AI’가 산타소환 기회를 선물합니다.<br/>산타 목소리로 고마운 사람들에게 전하는 음성카드!</p>
+                <div class="mouse_wheel"><img src="/images/scroll_white.png" class="arrow" /></div>
                 <div class="mouse_wheel mobile"><img src="images/scroll.png" class="arrow" /></div>
                 <div class="page_groups">
                     <div class="page_card page_group_left santa-img">
@@ -93,7 +105,7 @@
     하지만 앞으로도 그렇게 살면 내년에도 선물을 못 받겠지?
     내년엔 꼭 착한 사람이 되서 우리 모두 선물을 받는 사람이 되자!
                                 </textarea>
-                                <p class="text_tip">직접 작성해 보세요</p>
+                                <p class="text_tip">※ 직접 작성해 보세요</p>
                                 <p id="tts_txt_count" class="text_count">0 / 200 자</p>
                             </div>
                         </form>
@@ -101,8 +113,8 @@
                 </div>
 
                 <div class="button_group">
-                    <button id="btn_listen" type="button" class="btn active" title="" type="button"><span>음성 들어보기</span><div class="loader"></div></button>
-                    <button id="btn_send" type="button" class="btn active" title="" type="button"><span>음성카드 보내기</span><div class="loader"></div></button>
+                    <button id="btn_listen" class="btn active" title="" type="button"><span>음성 들어보기</span><div class="loader"></div></button>
+                    <button id="btn_send" class="btn active" title="" type="button"><span>음성카드 보내기</span><div class="loader"></div></button>
                 </div>
             </div>
         </section>
@@ -110,7 +122,7 @@
             <div class="page_container">
                 <h2 class="page_title">산타클로스와 AI의 콜라보!<br>
                     <span>인공지능 산타소환</span>이벤트</h2>
-                <p class="page_context">산타 이벤트, 어떠셨나요?<br/>짤막한 코멘트라도 너무 소중하답니다.</p>
+                <p class="page_context">산타 이벤트, 어떠셨나요?<br/>짤막한 코멘트라도 너무 소중하답니다.<br/></p>
                 <div class="page-post">
                     <div class="page_card border-line">
                         <div class="comment">
@@ -140,11 +152,12 @@
                         </ul>
                     </div>
                     <div class="button_group">
-                        <button type="button" id="btn_feedback" class="btn active" title="" type="button">의견 남기기</button>
+                        <button id="btn_feedback" class="btn active" title="" type="button">의견 남기기</button>
+                        <a href="#"><button id="btn_forms" class="btn" title="" type="button"><span>설문지 작성하기</span></button></a>
                     </div>
                 </div>
                 <div class="footer">
-                    <img src="images/logo.png" class="footer_logo"/>
+                    <img src="/images/logo.png" class="footer_logo"/>
                     <div class="footer_text">
                         <p class="copyright">서울특별시 금천구 가산디지털1로 19, 19~20층(가산동,대륭테크노타운 18차)
                             <br/>사업제휴문의 +82 2 6190 7500
@@ -152,9 +165,9 @@
                     </div>
                     <div class="footer_link">
                         <ul class="link_btn">
-                            <li><a href="https://www.selvasai.com"></a></li>
-                            <li><a href="https://www.selvasai.com"></a></li>
-                            <li><a href="https://www.selvasai.com"></a></li>
+                            <li><a href="https://www.selvasai.com" target="_blank" onclick="gtag('event', 'click', {'send_to': 'UA-130813910-1','event_category': 'footer_link', 'event_action': 'click', 'event_label': 'homepage'});"></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCgC7Y8_UenihqwlUWd5dXCQ" target="_blank" onclick="gtag('event', 'click', {'send_to': 'UA-130813910-1','event_category': 'footer_link', 'event_action': 'click', 'event_label': 'youtube'});"></a></li>
+                            <li><a href="https://tts.selvy.ai" target="_blank" onclick="gtag('event', 'click', {'send_to': 'UA-130813910-1','event_category': 'footer_link', 'event_action': 'click', 'event_label': 'blog'});"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -192,6 +205,13 @@
         </div>
     </div>
 </div>
+<div id="noticeModal" class="modal">
+    <!-- Modal content -->
+    <div class="notice-modal-content">
+        <span class="close" onClick="noticeBox.close()" style="color:#FFF">&times;</span>
+    </div>
+    <img src="/images/event_notice.png" style="visibility: hidden;"/>
+</div>
 <script>
     var tabs = function(){
         var t = "ul.tab_group";
@@ -200,14 +220,38 @@
             ev.preventDefault();
             $(t + " li.active").removeClass('active');
             $(t + " li").eq(i).addClass('active');
-            if(i > 3) $('.text_tip').show();
-            else $('.text_tip').hide();
             $('.contents textarea.txt').val(text_template[i]);
 			$('#tts_txt').keyup();
         });
 
         $(t + " li:first").trigger('click');
     }();
+
+    if(new Date().getTime() > new Date("2018-12-20T00:00:00").getTime()){
+        $("#btn_forms").addClass("active");
+        $("#btn_forms").click(function(){
+            var url = atob("aHR0cHM6Ly9nb28uZ2wvZm9ybXMvMFlOUk9XeGo5bU1TMDVlVTI=");
+            window.location.href=url;
+        });
+    }else{
+        $("#btn_forms").click(function(){
+            alertBox.open("이벤트 기간이 아닙니다.");
+        });
+    }
+
+    $.ajax({
+        url: "/images/event_notice.png",
+        type: 'GET',
+        success: function(res){
+            var ok = sessionStorage.getItem("isCloseEventNotice", "true");
+            if(ok !== null && ok == "true"){
+                //Nothing
+            }else{
+                noticeBox.open();
+            }
+        }
+    });
+    
 </script>
 </body>
 </html>
