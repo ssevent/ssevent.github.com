@@ -231,11 +231,6 @@ $(document).ready(function(){
 		$(".main").moveTo(2);
 	}
 
-	$('#tts_txt').blur(function() {
-		$(".main").moveTo(2);
-	});
-
-
     var tts_txt = '';
     var va_status = false;
     $("#btn_listen").on("click", function(){
